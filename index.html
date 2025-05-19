@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="container">
@@ -17,6 +19,7 @@
             <a href="#projects" class="section-indicator"><span>Live Projects</span></a>
             <a href="#experience" class="section-indicator"><span>My Journey</span></a>
             <a href="#education" class="section-indicator"><span>Education</span></a>
+            <a href="#cities" class="section-indicator"><span>Lived & Logged</span></a>
         </nav>
 
         <!-- Main Content -->
@@ -152,7 +155,6 @@
                                 <h6><i>Hosted on Streamlit</i></h6>
                                 <p>A RAG system using Gemma3 to generate responses to user queries based on UK news articles.</p>
                                 <div class="project-tech">
-                                    <span class="tech-tag">RAG</span>
                                     <span class="tech-tag">Gemma3</span>
                                     <span class="tech-tag">NVIDIA NIM</span>
                                     <span class="tech-tag">Pinecone</span>
@@ -268,6 +270,21 @@
                                 <p>Pune, India</p>
                                 <p><i>(Jun 2009 - Apr 2012)</i></p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cities Section -->
+            <section id="cities" class="section">
+                <div class="section-content">
+                    <div class="section-header">
+                        <h2>Lived & Logged</h2>
+                        <p class="section-tagline"><i>Some places teach you hustle, others teach you stillness. All of them leave a trace.</i></p>
+                    </div>
+                    <div class="cities-map-container">
+                        <div id="citiesMap" class="cities-map">
+                            <!-- Map will be rendered here -->
                         </div>
                     </div>
                 </div>
