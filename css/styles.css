@@ -205,6 +205,16 @@ p {
     margin-bottom: 0.5rem; /* Reduce space between h2 and its underline */
 }
 
+.section-tagline {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    text-align: center;
+    margin: 1rem auto 2rem;
+    max-width: 800px;
+    opacity: 0.9;
+    white-space: nowrap;
+}
+
 .section-header h2::after {
     content: '';
     display: block; /* Make it a block to center it */
@@ -743,6 +753,130 @@ h1 {
 @media (min-width: 768px) {
     .education-grid {
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); 
+    }
+}
+
+/* Cities Section Styles */
+.cities-map-container {
+    width: 110%;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    margin-left: -5%; /* Counterbalance the extra width to center it */
+}
+
+.cities-map {
+    width: 100%;
+    max-width: none;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 0 15px rgba(79, 209, 197, 0.3);
+    border: 1px solid var(--accent-teal);
+    overflow: hidden;
+    background-color: var(--bg-dark-secondary);
+    aspect-ratio: 16/9;
+    margin-bottom: 2rem;
+}
+
+/* Hide leaflet zoom controls */
+/* Hide leaflet zoom controls */
+.leaflet-control-zoom {
+    display: none;
+}
+
+/* Keep markers teal */
+.city-marker {
+    background-color: var(--accent-teal) !important;
+    border-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* City tooltip styles */
+.city-note-tooltip {
+    background-color: var(--bg-dark-secondary) !important;
+    border: 1px solid var(--accent-teal) !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3), 0 0 6px var(--accent-teal) !important;
+    padding: 6px 15px !important;
+    color: var(--text-light) !important;
+    font-family: var(--font-primary) !important;
+    min-width: 180px !important;
+    max-width: 240px !important;
+    width: auto !important;
+    white-space: normal !important;
+    opacity: 0.95 !important;
+}
+
+.city-tooltip p {
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    text-align: center;
+}
+
+/* Tooltip connector styling */
+.leaflet-tooltip-top.city-note-tooltip:before {
+    border-top-color: var(--accent-teal) !important;
+    border-width: 10px !important; /* Thinner connector */
+    margin-bottom: -20px !important; /* Extend the connector */
+    opacity: 0.9 !important;
+}
+
+/* Fix for Leaflet tooltip sizing */
+.leaflet-tooltip {
+    white-space: normal !important;
+    width: auto !important;
+}
+
+/* Style city labels */
+.city-label {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: var(--text-light) !important;
+    font-family: var(--font-primary);
+    font-weight: 500;
+    font-size: 14px;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.8), 0 0 3px rgba(0, 0, 0, 0.9);
+}
+
+/* Custom marker styling */
+.city-marker {
+    background-color: var(--accent-teal);
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    box-shadow: 0 0 0 rgba(79, 209, 197, 0.6);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(79, 209, 197, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(79, 209, 197, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(79, 209, 197, 0);
+    }
+}
+
+@media (max-width: 1024px) {
+    .cities-map {
+        height: 450px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cities-map {
+        height: 350px;
+    }
+    
+    .city-label {
+        font-size: 12px;
     }
 }
 
